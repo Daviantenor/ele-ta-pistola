@@ -1,0 +1,9 @@
+import json
+
+
+
+aluno ={"nome":"Lucas","idade":16,"aprovado":True}
+
+conversao_string =json.dumps(aluno)
+
+print(conversao_string)
