@@ -1,0 +1,32 @@
+import flet as ft
+
+lista=['Davi' , 'davi444']
+
+def main(page:ft.Page):
+
+    
+    page.theme_mode="Dark"
+    texto_login=ft.Text("Login",size=30,color="white")
+    entrada_texto_login=ft.TextField(width=600,focused_border_color=True)
+    texto_senha=ft.Text("Senha",size=29)
+    entrada_texto_senha=ft.TextField(width=599,password=True,can_reveal_password=True)
+    mensagem=ft.Text("", size=20, color="red")
+    def armazenar(e):
+        login_digitado = entrada_texto_login.value
+        senha_digitada = entrada_texto_senha.value
+            
+    if texto_login == lista[0] and texto_senha == lista[1]:
+        mensagem.value = "Login e senha corretos! Bem-vindo!"
+        mensagem.color = "green"
+    else:
+        mensagem.value = "Login ou senha incorretos. Tente novamente."
+        mensagem.color = "red"
+            
+    page.update()
+    botão=ft.ElevatedButton("Clique aqui",on_click=armazenar)
+
+    page.add(ft.Row([texto_login,entrada_texto_login]),
+        ft.Row([texto_senha,entrada_texto_senha]),
+        ft.Row([botão]),
+    mensagem)
+ft.app(target=main)
