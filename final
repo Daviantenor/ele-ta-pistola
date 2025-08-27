@@ -1,0 +1,9 @@
+import json
+
+
+dados ={"filme":"Matrix","ano":1999,"genero":"ficcao cientifica"}
+json_upgrade=json.dumps(dados,indent=4)
+
+
+
+print(json_upgrade)
