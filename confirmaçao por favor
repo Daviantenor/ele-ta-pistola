@@ -15,13 +15,15 @@ def main(page:ft.Page):
         login_digitado = entrada_texto_login.value
         senha_digitada = entrada_texto_senha.value
             
-    if texto_login == lista[0] and texto_senha == lista[1]:
-        mensagem.value = "Login e senha corretos! Bem-vindo!"
-        mensagem.color = "green"
-    else:
-        mensagem.value = "Login ou senha incorretos. Tente novamente."
-        mensagem.color = "red"
-            
+        if texto_login == lista[0] and texto_senha == lista[1]:
+            login_digitado= "Login e senha corretos! Bem-vindo!"
+            senha_digitada= "Login ou senha corretos, bem-vindo"
+            mensagem.color="green"
+        else:
+            login_digitado = "Login ou senha incorretos. Tente novamente."
+            senha_digitada= "Login ou senha incorretos. Tente novamente."
+            mensagem.color = "red"
+                
     page.update()
     botão=ft.ElevatedButton("Clique aqui",on_click=armazenar)
 
@@ -30,3 +32,4 @@ def main(page:ft.Page):
         ft.Row([botão]),
     mensagem)
 ft.app(target=main)
+       
