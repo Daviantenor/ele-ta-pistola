@@ -1,0 +1,9 @@
+import json
+
+dados_json = '{"produto":"Caderno", "preco": 12.5, "estoque": 30}'
+
+dados_conversao =   json.loads(dados_json)
+
+print(dados_conversao["produto"])
+print(dados_conversao["preco"])
+print(dados_conversao["estoque"])
